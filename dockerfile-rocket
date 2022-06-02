@@ -1,0 +1,17 @@
+FROM rocket-web-app-beta-ubuntu AS rocket-web-app-beta
+
+RUN mkdir -p /root/rocket-web-app-beta
+
+WORKDIR /root/rocket-web-app-beta
+
+COPY Cargo.toml .
+RUN mkdir -p /root/rocket-web-app-beta/src
+COPY ./src ./src
+
+RUN cargo install --path .
+
+ENV ROCKET_ADDRESS=0.0.0.0
+
+EXPOSE 8000
+
+CMD ["rocket-web-app-beta"]
