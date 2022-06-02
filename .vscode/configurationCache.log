@@ -1,0 +1,1 @@
+{"buildTargets":["build","build-clean","clean","container-clean","docker-clean","docker-residue","git","help","preview","shell"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}

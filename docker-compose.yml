@@ -1,15 +1,29 @@
 version: "3.3"
 services:
+  rocket-web-app-beta-dev:
+    build: 
+      context: .
+      dockerfile: "dockerfile-rocket"
+    image: "rocket-web-app-beta-dev:latest"
+    container_name: "rocket-web-app-beta-dev"
+    depends_on:
+      - rocket-web-app-beta-ubuntu
+    ports:
+      - 8081:8000
+    profiles:
+      - dev
   rocket-web-app-beta:
     build: 
       context: .
       dockerfile: "dockerfile-rocket"
-    image: "rocket-web-app-beta:latest"
-    container_name: "rocket-web-app-beta"
+    image: "rocket-web-app-beta-prod:latest"
+    container_name: "rocket-web-app-beta-prod"
     depends_on:
       - rocket-web-app-beta-ubuntu
     ports:
-      - 8000:8000
+      - 8080:8000
+    profiles:
+      - prod
   rocket-web-app-beta-ubuntu:
     build: 
       context: .

@@ -1,0 +1,11 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/jan-wick/rocket-web-app-beta'
+ 
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+
+egrep -oh '[0-9a-zA-Z_\.\-]+:.*?@ .*'  Makefile | \
+awk 'BEGIN {FS = ":.*?@ "}; {printf "\033[36m%-30s\033[0m %s\n", $1, $2}'
+make: Leaving directory '/home/jan-wick/rocket-web-app-beta'
+ 
